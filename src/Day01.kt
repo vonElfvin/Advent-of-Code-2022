@@ -1,15 +1,31 @@
 fun main() {
     fun part1(input: List<String>): Int {
-        return input.size
+        var max = 0
+        var current = 0
+        input.forEach {
+            if (it.isBlank()) {
+                max = maxOf(max, current)
+                current = 0
+            } else {
+                current += it.toInt()
+            }
+        }
+        return max
     }
 
     fun part2(input: List<String>): Int {
-        return input.size
+        val elves = mutableListOf<Int>()
+        var current = 0
+        input.forEach {
+            if (it.isBlank()) {
+                elves += current
+                current = 0
+            } else {
+                current += it.toInt()
+            }
+        }
+        return elves.sortedDescending().slice(0..2).sum()
     }
-
-    // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_test")
-    check(part1(testInput) == 1)
 
     val input = readInput("Day01")
     println(part1(input))
