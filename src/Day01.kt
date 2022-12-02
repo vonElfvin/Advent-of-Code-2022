@@ -24,7 +24,7 @@ fun main() {
                 current += it.toInt()
             }
         }
-        return elves.sortedDescending().slice(0..2).sum()
+        return elves.sortedDescending().take(3).sum()
     }
 
     val input = readInput("Day01")
