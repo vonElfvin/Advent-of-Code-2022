@@ -1,3 +1,7 @@
+//////////////
+// TEMPLATE //
+//////////////
+
 fun main() {
     fun part1(input: List<String>): Int {
         return 0
@@ -7,7 +11,7 @@ fun main() {
         return 0
     }
 
-    val input = readInput("Day02")
+    val input = readInput("DayXY")
     println(part1(input))
     println(part2(input))
 }
