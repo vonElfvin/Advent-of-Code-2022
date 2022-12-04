@@ -11,8 +11,7 @@ fun main() {
         if (both.isUpperCase()) both.code - UPPER else both.code - LOWER
     }
 
-    fun part2(input: List<String>): Int = input.chunked(3).sumOf { group ->
-        val (first, second, third) = group
+    fun part2(input: List<String>): Int = input.chunked(3).sumOf { (first, second, third) ->
         val all = first.first { second.contains(it) && third.contains(it) }
         if (all.isUpperCase()) all.code - UPPER else all.code - LOWER
     }
