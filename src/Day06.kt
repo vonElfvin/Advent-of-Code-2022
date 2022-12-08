@@ -4,7 +4,7 @@ fun main() {
         signal.forEachIndexed { index, _ ->
             if (index < length - 1) return@forEachIndexed
             val lastFour = signal.substring(index - length + 1..index)
-            val distinctFour = lastFour.toList().distinct().joinToString("")
+            val distinctFour = lastFour.toSet().joinToString("")
             if (lastFour == distinctFour) return index + 1
         }
         return 0
